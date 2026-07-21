@@ -1,11 +1,10 @@
 import { createBrowserRouter } from 'react-router-dom'
 import './App.css'
 import { Navbar } from './components/Navbar'
-import { Hero } from './screen/HeroSection'
-import { AboutUs } from './screen/AboutUs'
 import { Projects } from './screen/ProjectsSection'
 import { Footer } from './screen/Footer'
-import { ContactUs } from './screen/ContactUs'
+import { ContactUs } from './screen/ContactMe'
+import { HorizontalScroll } from './components/HorizontalScroll'
 
 function App() {
 
@@ -13,10 +12,9 @@ function App() {
     <div>
       <header>
         <Navbar />
-        <Hero />
+        <HorizontalScroll />
       </header>
       <main>
-        <AboutUs />
         <Projects />
         <ContactUs />
       </main>
