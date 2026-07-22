@@ -1,4 +1,6 @@
-import { useState } from 'react';
+import React from 'react';
+import { ImageCarousel } from './ImageCarousel';
+import { FiGithub } from 'react-icons/fi'; // o tu icono de GitHub
 
 interface ProjectCardProps {
   images: string[];
@@ -8,47 +10,49 @@ interface ProjectCardProps {
   githubLink: string;
 }
 
-export const ProjectCard = ({ images, title, description, tags, githubLink }: ProjectCardProps) => {
-    const [currentImageIndex, setCurrentImageIndex] = useState(0);
+export const ProjectCard: React.FC<ProjectCardProps> = ({
+  images,
+  title,
+  description,
+  tags,
+  githubLink,
+}) => (
+    <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl overflow-hidden flex flex-col hover:border-white/20 transition-colors">
+      {/* Carrusel de imágenes */}
+      <ImageCarousel images={images} className="w-full h-48 md:h-56" />
 
-    const goToPrevious = () => {
-    setCurrentImageIndex((prevIndex) =>
-      prevIndex === 0 ? images.length - 1 : prevIndex - 1
-    );
-  };
+      {/* Contenido textual */}
+      <div className="p-5 flex flex-col gap-3 flex-1">
+        <h3 className="font-title text-xl font-semibold text-white">
+          {title}
+        </h3>
+        <p className="text-sm text-white/70 font-body leading-relaxed flex-1">
+          {description}
+        </p>
 
-  const goToNext = () => {
-    setCurrentImageIndex((prevIndex) =>
-      prevIndex === images.length - 1 ? 0 : prevIndex + 1
-    );
-  };
-
-  return (
-    <div>
-      {images.length > 0 && (
-        <div>
-          <button onClick={goToPrevious} aria-label="Imagen anterior">
-            &lt;
-          </button>
-          <img
-            src={images[currentImageIndex]}
-            alt={`Slide ${currentImageIndex + 1}`}
-          />
-          <button onClick={goToNext} aria-label="Imagen siguiente">
-            &gt;
-          </button>
+        {/* Tags */}
+        <div className="flex flex-wrap gap-2 mt-1">
+          {tags.map((tag, idx) => (
+            <span
+              key={idx}
+              className="text-xs font-mono bg-white/10 backdrop-blur-sm border border-white/10 text-white/80 px-2 py-0.5 rounded-full"
+            >
+              {tag}
+            </span>
+          ))}
         </div>
-      )}
-      <h2>{title}</h2>
-      <p>{description}</p>
-      <div>
-        {tags.map((tag, index) => (
-          <span key={index}>{tag}</span>
-        ))}
+
+        {/* Botón GitHub */}
+        <a
+          href={githubLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-2 self-start inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 text-white rounded-full px-4 py-2 text-sm hover:bg-white/20 transition"
+        >
+          <FiGithub className="w-4 h-4" />
+          Ver código
+        </a>
       </div>
-      <a href={githubLink} target="_blank" rel="noopener noreferrer">
-        Ver en GitHub
-      </a>
     </div>
-  );
-};
+);
+

@@ -4,4 +4,7 @@
 @import "shadcn/tailwind.css";
 
 
-/* Fonts: Google Sans Flex, Rubik, Montserrat */
+@theme {
+  --font-title: 'Google Sans Flex', sans-serif;
+  --font-subtitle: 'Montserrat', sans-serif;
+}

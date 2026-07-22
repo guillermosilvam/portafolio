@@ -1,24 +1,23 @@
-import styles from './Hero.module.css'
 import pfp1 from '../assets/pfp1.webp'
 
 export const AboutMe = () => (
     <section className="relative z-10 h-full flex items-center justify-center text-white px-8 md:px-20">
       <div className="flex flex-col md:flex-row items-center gap-12 w-full max-w-6xl">
         <div className="flex-1 space-y-6">
-            <span className={`text-sm ${styles.title} text-white/60 tracking-widest uppercase`}>
+            <span className='text-sm font-title text-white/60 tracking-widest uppercase'>
             Sobre mí
           </span>
-          <h2 className={`text-4xl md:text-5xl ${styles.title} font-light leading-tight`}>
+          <h2 className='text-4xl md:text-5xl font-title font-light leading-tight'>
             Ingeniero de sistemas. Curioso por naturaleza.
           </h2>
-          <p className={`text-lg ${styles.subtitle} text-white/80 leading-relaxed max-w-xl`}>
+          <p className='text-lg font-subtitle text-white/80 leading-relaxed max-w-xl'>
             Soy Guillermo Silva, ingeniero de sistemas recién graduado. Me apasiona el desarrollo de software, 
             tanto en el frontend como en el backend. Disfruto construir aplicaciones completas, desde la lógica 
             hasta la interfaz, y siempre estoy aprendiendo por mi cuenta para mejorar mis habilidades.
             Creo en el código limpio, en los detalles y en la constancia para crecer profesionalmente.
           </p>
-          <p className={`text-sm ${styles.subtitle} italic text-white/60 max-w-md border-l border-white/30 pl-4`}>
-            “El hombre que mueve montañas empieza apartando piedras pequeñas”
+          <p className='text-sm font-subtitle italic text-white/60 max-w-md border-l border-white/30 pl-4'>
+            "El hombre que mueve montañas empieza apartando piedras pequeñas"
           </p>
         </div>
 

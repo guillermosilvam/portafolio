@@ -1,4 +1,3 @@
-import styles from './Hero.module.css'
 import TextType from '../../@/components/TextType'
 import { CodeWindow } from '../components/CodeWindow'
 
@@ -6,10 +5,10 @@ export const Hero = () => (
     <section className='relative w-full h-screen overflow-hidden'>
         <div className='relative z-10 h-full w-full flex flex-row items-center justify-between text-white gap-6 px-8'>
             <div className='flex flex-col items-start justify-center w-3/5'>
-                <h1 className={` ${styles.title} text-7xl font-normal tracking-wider`}>Guillermo Silva</h1>
+                <h1 className='font-title text-7xl font-normal tracking-wider'>Guillermo Silva</h1>
                 <TextType 
                     text={['Desarrollador Web Full Stack', 'Apasionado por la tecnología', 'Creador de experiencias digitales']}
-                    className={` ${styles.subtitle} text-4xl font-light mt-2.5 tracking-wider`}
+                    className='font-subtitle text-4xl font-light mt-2.5 tracking-wider'
                     cursorCharacter='_'
                     pauseDuration={2000}
                 />
