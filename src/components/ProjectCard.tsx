@@ -18,10 +18,8 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   githubLink,
 }) => (
     <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl overflow-hidden flex flex-col hover:border-white/20 transition-colors">
-      {/* Carrusel de imágenes */}
       <ImageCarousel images={images} className="w-full h-48 md:h-56" />
 
-      {/* Contenido textual */}
       <div className="p-5 flex flex-col gap-3 flex-1">
         <h3 className="font-title text-xl font-semibold text-white">
           {title}
@@ -30,7 +28,6 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
           {description}
         </p>
 
-        {/* Tags */}
         <div className="flex flex-wrap gap-2 mt-1">
           {tags.map((tag, idx) => (
             <span
@@ -42,7 +39,6 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
           ))}
         </div>
 
-        {/* Botón GitHub */}
         <a
           href={githubLink}
           target="_blank"

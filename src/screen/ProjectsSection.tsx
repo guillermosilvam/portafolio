@@ -24,41 +24,48 @@ export const Projects: React.FC<ProjectSectionProps> = ({ projects }) => {
   const titleRef = useRef<HTMLHeadingElement>(null);
   const gridRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    const section = sectionRef.current;
-    const bg = backgroundRef.current;
-    const title = titleRef.current;
-    const grid = gridRef.current;
-    if (!section || !bg || !title || !grid) return;
+useEffect(() => {
+  const section = sectionRef.current;
+  const bg = backgroundRef.current;
+  const title = titleRef.current;
+  const grid = gridRef.current;
+  if (!section || !bg || !title || !grid) return;
 
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: section,
-        start: 'top bottom',
-        end: 'top center',
-        scrub: 1.5,
-      },
-    });
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: section,
+      start: 'top 75%',
+      toggleActions: 'play reverse play reverse',
+    },
+  });
 
-    tl.fromTo(bg, { opacity: 0 }, { opacity: 1, duration: 1 })
-      .fromTo(title, { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.8 }, '-=0.6')
-      .fromTo(
-        grid.children,
-        { y: 60, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.6, stagger: 0.08 },
-        '-=0.4'
-      );
+  tl.fromTo(bg,
+    { opacity: 0, scale: 1.25 },
+    { opacity: 1, scale: 1, duration: 1.5, ease: 'power4.out' }
+  );
 
-    return () => {
-      ScrollTrigger.getAll().forEach(t => t.kill());
-    };
-  }, []);
+  tl.fromTo(title,
+    { y: -100, opacity: 0, filter: 'blur(15px)' },
+    { y: 0, opacity: 1, filter: 'blur(0px)', duration: 1.2, ease: 'back.out(1.8)' },
+    '-=0.8'
+  );
+
+  tl.fromTo(grid.children,
+    { y: 150, opacity: 0, rotateX: 30, scale: 0.7 },
+    { y: 0, opacity: 1, rotateX: 0, scale: 1, duration: 1, stagger: { each: 0.2, ease: 'back.out(1.7)' } },
+    '-=0.6'
+  );
+
+  return () => {
+    ScrollTrigger.getAll().forEach(t => t.kill());
+  };
+}, []);
 
   return (
     <section
       ref={sectionRef}
       id="projects"
-      className="w-full min-h-screen relative z-10 py-20 px-6 md:px-12 bg-black overflow-hidden"
+      className="w-full min-h-screen relative z-10 py-20 px-6 md:px-12 bg-black overflow-hidden snap-start"
     >
       <div ref={backgroundRef} className="absolute inset-0 z-0">
         <DotField

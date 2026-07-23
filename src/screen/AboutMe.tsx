@@ -1,7 +1,7 @@
 import pfp1 from '../assets/pfp1.webp'
 
 export const AboutMe = () => (
-    <section className="relative z-10 h-full flex items-center justify-center text-white px-8 md:px-20">
+    <section id="about" className="relative z-10 h-full flex items-center justify-center text-white px-8 md:px-20">
       <div className="flex flex-col md:flex-row items-center gap-12 w-full max-w-6xl">
         <div className="flex-1 space-y-6">
             <span className='text-sm font-title text-white/60 tracking-widest uppercase'>

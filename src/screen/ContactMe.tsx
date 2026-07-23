@@ -3,8 +3,8 @@ import { useState } from 'react';
 
 export const Contact = () => {
   const [copied, setCopied] = useState(false);
-  const email = 'tucorreo@ejemplo.com';
-  const github = 'https://github.com/tuusuario';
+  const email = 'guillermosilvam13@gmail.com';
+  const github = 'https://github.com/guillermosilvam';
 
   const handleCopyEmail = () => {
     navigator.clipboard.writeText(email);
@@ -13,7 +13,7 @@ export const Contact = () => {
   };
 
   return (
-    <section id="contact" className="bg-black relative z-10 py-20 px-6 flex justify-center">
+    <section id="contact" className="bg-black relative z-10 py-20 px-6 flex justify-center snap-start">
       <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 md:p-12 text-center max-w-lg w-full shadow-[0_0_30px_rgba(255,255,255,0.05)]">
         <h2 className="text-3xl md:text-4xl font-title text-white mb-4">Hablemos</h2>
         <p className="text-white/60 font-body mb-8 max-w-md mx-auto">
@@ -21,7 +21,6 @@ export const Contact = () => {
         </p>
 
         <div className="flex flex-col gap-4">
-          {/* Email */}
           <div className="flex items-center gap-3 bg-white/10 backdrop-blur-sm border border-white/10 rounded-full px-5 py-3">
             <FiMail className="text-emerald-300 w-5 h-5" />
             <a href={`mailto:${email}`} className="text-white/80 font-mono text-sm flex-1 text-left hover:text-white transition">
@@ -35,8 +34,6 @@ export const Contact = () => {
               {copied ? <span className="text-xs text-emerald-300">¡Copiado!</span> : <FiCopy className="w-4 h-4" />}
             </button>
           </div>
-
-          {/* GitHub */}
           <a
             href={github}
             target="_blank"
@@ -44,12 +41,12 @@ export const Contact = () => {
             className="flex items-center gap-3 bg-white/10 backdrop-blur-sm border border-white/10 rounded-full px-5 py-3 hover:bg-white/20 transition"
           >
             <FiGithub className="text-white w-5 h-5" />
-            <span className="text-white/80 font-mono text-sm">github.com/tuusuario</span>
+            <span className="text-white/80 font-mono text-sm">github.com/guillermosilvam</span>
           </a>
         </div>
 
         <p className="text-white/30 text-xs mt-8 font-body">
-          También puedes encontrarme en el menú de navegación. 😊
+          También puedes encontrarme en el menú de navegación.
         </p>
       </div>
     </section>

@@ -10,19 +10,18 @@ import { Technologies } from './screen/Technologies'
 const PROJECTS_DATA = [
   {
     images: ['/img1.jpg', '/img2.jpg'],
-    title: 'E-commerce Full Stack',
-    description: 'Tienda online completa con carrito, pagos y panel admin.',
-    tags: ['React', 'Node.js', 'MongoDB', 'Tailwind'],
-    githubLink: 'https://github.com/tuusuario/ecommerce',
+    title: 'Sistema de Informacion Crediticia',
+    description: 'Página completa con registro de empresas, productores y panel admin.',
+    tags: ['React', 'Typescript', 'Django', 'PostgreSQL'],
+    githubLink: 'https://github.com/guillermosilvam/Credit-information-system',
   },
   {
     images: ['/img3.jpg', '/img4.jpg'],
-    title: 'Task Manager',
-    description: 'App de tareas con autenticación y arrastrar y soltar.',
-    tags: ['Next.js', 'Prisma', 'PostgreSQL'],
-    githubLink: 'https://github.com/tuusuario/taskmanager',
+    title: 'Sistema de Reservaciones de Tren',
+    description: 'App de reservaciones de trenes con autenticación por roles y sección de reportes.',
+    tags: ['PHP', 'JavaScript','Tailwind', 'MySQL'],
+    githubLink: 'https://github.com/guillermosilvam/CRUD-PHP',
   },
-  // más proyectos...
 ];
 
 function App() {

@@ -2,7 +2,7 @@ import TextType from '../../@/components/TextType'
 import { CodeWindow } from '../components/CodeWindow'
 
 export const Hero = () => (
-    <section className='relative w-full h-screen overflow-hidden'>
+    <section id='hero' className='relative w-full h-screen overflow-hidden'>
         <div className='relative z-10 h-full w-full flex flex-row items-center justify-between text-white gap-6 px-8'>
             <div className='flex flex-col items-start justify-center w-3/5'>
                 <h1 className='font-title text-7xl font-normal tracking-wider'>Guillermo Silva</h1>

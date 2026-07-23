@@ -8,3 +8,8 @@
   --font-title: 'Google Sans Flex', sans-serif;
   --font-subtitle: 'Montserrat', sans-serif;
 }
+
+html {
+  scroll-behavior: smooth;
+  scroll-snap-type: y proximity;
+}
