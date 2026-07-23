@@ -1,5 +1,6 @@
 import { FiMail, FiGithub, FiCopy } from 'react-icons/fi';
 import { useState } from 'react';
+import DotField from '../../@/components/DotField';
 
 export const Contact = () => {
   const [copied, setCopied] = useState(false);
@@ -13,8 +14,24 @@ export const Contact = () => {
   };
 
   return (
-    <section id="contact" className="bg-black relative z-10 py-20 px-6 flex justify-center snap-start">
-      <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 md:p-12 text-center max-w-lg w-full shadow-[0_0_30px_rgba(255,255,255,0.05)]">
+    <section id="contact" className="bg-black relative z-10 py-20 px-6 flex justify-center snap-start overflow-hidden">
+      <div className="absolute inset-0 z-0">
+        <DotField
+          dotRadius={1.5}
+          dotSpacing={50}
+          bulgeStrength={67}
+          glowRadius={160}
+          sparkle={true}
+          waveAmplitude={10}
+          cursorRadius={400}
+          cursorForce={0.1}
+          bulgeOnly
+          gradientFrom="#404040"
+          gradientTo="#404040"
+          glowColor="#3e3e3e"
+        />
+      </div>
+      <div className="relative z-10 bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 md:p-12 text-center max-w-lg w-full shadow-[0_0_30px_rgba(255,255,255,0.05)]">
         <h2 className="text-3xl md:text-4xl font-title text-white mb-4">Hablemos</h2>
         <p className="text-white/60 font-body mb-8 max-w-md mx-auto">
           Si tienes un proyecto en mente, una oportunidad o solo quieres charlar sobre tecnología, estaré encantado de escucharte.

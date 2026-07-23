@@ -1,6 +1,7 @@
 import { useRef, useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import DotField from "../../@/components/DotField";
 import {
   SiReact,
   SiTypescript,
@@ -101,18 +102,34 @@ export const Technologies = () => {
     <section
       ref={sectionRef}
       id="technologies"
-      className="bg-black relative z-10 py-20 px-6 snap-start h-screen flex flex-col justify-center"
+      className="bg-black relative z-10 py-20 px-6 snap-start h-screen flex flex-col justify-center overflow-hidden"
     >
+      <div className="absolute inset-0 z-0">
+        <DotField
+          dotRadius={1.5}
+          dotSpacing={50}
+          bulgeStrength={67}
+          glowRadius={160}
+          sparkle={true}
+          waveAmplitude={10}
+          cursorRadius={400}
+          cursorForce={0.1}
+          bulgeOnly
+          gradientFrom="#404040"
+          gradientTo="#404040"
+          glowColor="#3e3e3e"
+        />
+      </div>
       <h2
         ref={titleRef}
-        className="text-3xl md:text-4xl font-title text-white text-center mb-10"
+        className="relative z-10 text-3xl md:text-4xl font-title text-white text-center mb-10"
       >
         Tecnologías que uso
       </h2>
-      <p className="text-center text-white/50 font-body max-w-xl mx-auto mb-10">
+      <p className="relative z-10 text-center text-white/50 font-body max-w-xl mx-auto mb-10">
         Herramientas y lenguajes con los que he construido proyectos reales.
       </p>
-      <div className="flex flex-col gap-6 max-w-3xl mx-auto">
+      <div className="relative z-10 flex flex-col gap-6 max-w-3xl mx-auto">
         <div ref={topRowRef} className="flex flex-wrap justify-center gap-6">
           {topRow.map(({ icon: Icon, name, color }) => (
             <div

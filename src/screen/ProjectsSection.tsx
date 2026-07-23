@@ -70,17 +70,17 @@ useEffect(() => {
       <div ref={backgroundRef} className="absolute inset-0 z-0">
         <DotField
           dotRadius={1.5}
-          dotSpacing={14}
+          dotSpacing={50}
           bulgeStrength={67}
           glowRadius={160}
-          sparkle={false}
-          waveAmplitude={0}
-          cursorRadius={500}
+          sparkle={true}
+          waveAmplitude={10}
+          cursorRadius={400}
           cursorForce={0.1}
           bulgeOnly
-          gradientFrom="#aeaeae"
-          gradientTo="#2d2a2a"
-          glowColor="#353434"
+          gradientFrom="#404040"
+          gradientTo="#404040"
+          glowColor="#3e3e3e"
         />
       </div>
 

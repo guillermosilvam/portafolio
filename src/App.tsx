@@ -6,6 +6,7 @@ import { Footer } from './screen/Footer'
 import { Contact } from './screen/ContactMe'
 import { HorizontalScroll } from './components/HorizontalScroll'
 import { Technologies } from './screen/Technologies'
+import { SectionDivider } from './components/SectionDivider'
 
 const PROJECTS_DATA = [
   {
@@ -33,8 +34,11 @@ function App() {
         <HorizontalScroll />
       </header>
       <main>
+        <SectionDivider />
         <Projects projects={PROJECTS_DATA} />
+        <SectionDivider />
         <Technologies />
+        <SectionDivider />
         <Contact />
       </main>
       <footer>
