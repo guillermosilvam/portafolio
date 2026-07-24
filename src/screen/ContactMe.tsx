@@ -16,7 +16,7 @@ export const Contact = () => {
   };
 
   return (
-    <section id="contact" className="bg-black relative z-10 py-20 px-6 flex justify-center snap-start overflow-hidden"
+    <section id="contact" className="bg-black relative z-10 py-12 md:py-20 px-4 md:px-6 flex justify-center snap-start overflow-hidden"
       style={{ borderBottom: '1px solid transparent', borderImage: 'linear-gradient(to right, transparent, rgba(255,255,255,0.25), transparent) 1' }}>
       <div className="absolute inset-0 z-0">
         <DotField
@@ -34,16 +34,16 @@ export const Contact = () => {
           glowColor="#3e3e3e"
         />
       </div>
-      <div className="relative z-10 bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 md:p-12 text-center max-w-lg w-full shadow-[0_0_30px_rgba(255,255,255,0.05)]">
-        <h2 className="text-3xl md:text-4xl font-title text-white mb-4">Hablemos</h2>
-        <p className="text-white/60 font-body mb-8 max-w-md mx-auto">
+      <div className="relative z-10 bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl md:rounded-3xl p-6 md:p-12 text-center max-w-lg w-full shadow-[0_0_30px_rgba(255,255,255,0.05)]">
+        <h2 className="text-2xl md:text-4xl font-title text-white mb-3 md:mb-4">Hablemos</h2>
+        <p className="text-white/60 font-body mb-6 md:mb-8 max-w-md mx-auto text-sm md:text-base px-2">
           Si tienes un proyecto en mente, una oportunidad o solo quieres charlar sobre tecnología, estaré encantado de escucharte.
         </p>
 
-        <div className="flex flex-col gap-4">
-          <div className="flex items-center gap-3 bg-white/10 backdrop-blur-sm border border-white/10 rounded-full px-5 py-3">
-            <FiMail className="text-red-300 w-5 h-5" />
-            <a href={`mailto:${email}`} className="text-white/80 font-mono text-sm flex-1 text-left hover:text-white transition">
+        <div className="flex flex-col gap-3 md:gap-4">
+          <div className="flex items-center gap-2 md:gap-3 bg-white/10 backdrop-blur-sm border border-white/10 rounded-full px-3 md:px-5 py-2.5 md:py-3">
+            <FiMail className="text-red-300 w-4 h-4 md:w-5 md:h-5 shrink-0" />
+            <a href={`mailto:${email}`} className="text-white/80 font-mono text-xs md:text-sm flex-1 text-left hover:text-white transition truncate">
               {email}
             </a>
             <button
@@ -59,23 +59,23 @@ export const Contact = () => {
             href={github}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-3 bg-white/10 backdrop-blur-sm border border-white/10 rounded-full px-5 py-3 hover:bg-white/20 transition"
+            className="flex items-center gap-2 md:gap-3 bg-white/10 backdrop-blur-sm border border-white/10 rounded-full px-3 md:px-5 py-2.5 md:py-3 hover:bg-white/20 transition"
           >
-            <FiGithub className="text-white w-5 h-5" />
-            <span className="text-white/80 font-mono text-sm">github.com/guillermosilvam</span>
+            <FiGithub className="text-white w-4 h-4 md:w-5 md:h-5 shrink-0" />
+            <span className="text-white/80 font-mono text-xs md:text-sm truncate">github.com/guillermosilvam</span>
           </a>
           <a
             href={linkedIn}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-3 bg-white/10 backdrop-blur-sm border border-white/10 rounded-full px-5 py-3 hover:bg-white/20 transition"
+            className="flex items-center gap-2 md:gap-3 bg-white/10 backdrop-blur-sm border border-white/10 rounded-full px-3 md:px-5 py-2.5 md:py-3 hover:bg-white/20 transition"
           >
-            <FiLinkedin className="text-blue-500 w-5 h-5" />
-            <span className="text-white/80 font-mono text-sm">Perfil de LinkedIn</span>
+            <FiLinkedin className="text-blue-500 w-4 h-4 md:w-5 md:h-5 shrink-0" />
+            <span className="text-white/80 font-mono text-xs md:text-sm truncate">Perfil de LinkedIn</span>
           </a>
-          <div className="flex items-center gap-3 bg-white/10 backdrop-blur-sm border border-white/10 rounded-full px-5 py-3">
-            <FiPhone className="text-emerald-300 w-5 h-5" />
-            <span className="text-white/80 font-mono text-sm flex-1 text-left hover:text-white transition">
+          <div className="flex items-center gap-2 md:gap-3 bg-white/10 backdrop-blur-sm border border-white/10 rounded-full px-3 md:px-5 py-2.5 md:py-3">
+            <FiPhone className="text-emerald-300 w-4 h-4 md:w-5 md:h-5 shrink-0" />
+            <span className="text-white/80 font-mono text-xs md:text-sm flex-1 text-left hover:text-white transition truncate">
               {contact}
             </span>
             <button

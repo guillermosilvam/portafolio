@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback } from 'react'
+import { FiMenu, FiX } from 'react-icons/fi'
 
 const sections = [
   { id: 'hero', label: 'Inicio' },
@@ -75,13 +76,11 @@ export const Navbar = () => {
         </div>
 
         <button
-          className="md:hidden flex flex-col gap-1.5 p-1"
+          className="md:hidden flex items-center justify-center w-8 h-8 text-white"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Menú"
         >
-          <span className={`block w-5 h-px bg-white transition-all duration-300 ${menuOpen ? 'rotate-45 translate-y-[3.5px]' : ''}`} />
-          <span className={`block w-5 h-px bg-white transition-all duration-300 ${menuOpen ? 'opacity-0' : ''}`} />
-          <span className={`block w-5 h-px bg-white transition-all duration-300 ${menuOpen ? '-rotate-45 translate-y-[-3.5px]' : ''}`} />
+          {menuOpen ? <FiX className="w-5 h-5" /> : <FiMenu className="w-5 h-5" />}
         </button>
       </div>
 

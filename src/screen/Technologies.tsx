@@ -102,7 +102,7 @@ export const Technologies = () => {
     <section
       ref={sectionRef}
       id="technologies"
-      className="bg-black relative z-10 py-20 px-6 snap-start h-screen flex flex-col justify-center overflow-hidden"
+      className="bg-black relative z-10 py-10 md:py-20 px-4 md:px-6 snap-start min-h-screen flex flex-col justify-center overflow-hidden"
       style={{ borderBottom: '1px solid transparent', borderImage: 'linear-gradient(to right, transparent, rgba(255,255,255,0.25), transparent) 1' }}
     >
       <div className="absolute inset-0 z-0">
@@ -123,33 +123,33 @@ export const Technologies = () => {
       </div>
       <h2
         ref={titleRef}
-        className="relative z-10 text-3xl md:text-4xl font-title text-white text-center mb-10"
+        className="relative z-10 text-2xl md:text-3xl lg:text-4xl font-title text-white text-center mb-6 md:mb-10"
       >
         Tecnologías que uso
       </h2>
-      <p className="relative z-10 text-center text-white/50 font-body max-w-xl mx-auto mb-10">
+      <p className="relative z-10 text-center text-white/50 font-body max-w-xl mx-auto mb-6 md:mb-10 text-sm md:text-base px-2">
         Herramientas y lenguajes con los que he construido proyectos reales.
       </p>
-      <div className="relative z-10 flex flex-col gap-6 max-w-3xl mx-auto">
-        <div ref={topRowRef} className="flex flex-wrap justify-center gap-6">
+      <div className="relative z-10 flex flex-col gap-4 md:gap-6 max-w-3xl mx-auto">
+        <div ref={topRowRef} className="flex flex-wrap justify-center gap-3 md:gap-6">
           {topRow.map(({ icon: Icon, name, color }) => (
             <div
               key={name}
-              className="tech-item flex flex-col items-center gap-2 bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-4 w-24 hover:bg-white/10 hover:border-white/20 transition-all duration-300 hover:scale-105"
+              className="tech-item flex flex-col items-center gap-1.5 md:gap-2 bg-white/5 backdrop-blur-md border border-white/10 rounded-lg md:rounded-xl p-2.5 md:p-4 w-16 md:w-24 hover:bg-white/10 hover:border-white/20 transition-all duration-300 hover:scale-105"
             >
-              <Icon className={`w-8 h-8 ${color}`} />
-              <span className="text-xs text-white/60 font-mono">{name}</span>
+              <Icon className={`w-6 h-6 md:w-8 md:h-8 ${color}`} />
+              <span className="text-[10px] md:text-xs text-white/60 font-mono">{name}</span>
             </div>
           ))}
         </div>
-        <div ref={bottomRowRef} className="flex flex-wrap justify-center gap-6">
+        <div ref={bottomRowRef} className="flex flex-wrap justify-center gap-3 md:gap-6">
           {bottomRow.map(({ icon: Icon, name, color }) => (
             <div
               key={name}
-              className="tech-item flex flex-col items-center gap-2 bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-4 w-24 hover:bg-white/10 hover:border-white/20 transition-all duration-300 hover:scale-105"
+              className="tech-item flex flex-col items-center gap-1.5 md:gap-2 bg-white/5 backdrop-blur-md border border-white/10 rounded-lg md:rounded-xl p-2.5 md:p-4 w-16 md:w-24 hover:bg-white/10 hover:border-white/20 transition-all duration-300 hover:scale-105"
             >
-              <Icon className={`w-8 h-8 ${color}`} />
-              <span className="text-xs text-white/60 font-mono">{name}</span>
+              <Icon className={`w-6 h-6 md:w-8 md:h-8 ${color}`} />
+              <span className="text-[10px] md:text-xs text-white/60 font-mono">{name}</span>
             </div>
           ))}
         </div>
