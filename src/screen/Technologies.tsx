@@ -103,6 +103,7 @@ export const Technologies = () => {
       ref={sectionRef}
       id="technologies"
       className="bg-black relative z-10 py-20 px-6 snap-start h-screen flex flex-col justify-center overflow-hidden"
+      style={{ borderBottom: '1px solid transparent', borderImage: 'linear-gradient(to right, transparent, rgba(255,255,255,0.25), transparent) 1' }}
     >
       <div className="absolute inset-0 z-0">
         <DotField

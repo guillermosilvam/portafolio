@@ -26,7 +26,7 @@ export const Hero = () => (
                       rounded-full px-8 py-3
                       hover:bg-white/20 hover:border-white/30
                       transition-all duration-300
-                    ">Visualizar CV</button>
+                    "><a href="https://drive.google.com/file/d/1dsFU79gmpUzmU6AxytijTUqqW82R3sz4/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Visualizar CV</a></button>
                 </div>
             </div>
             <div className="w-2/5 flex items-center justify-center">

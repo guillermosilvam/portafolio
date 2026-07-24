@@ -1,20 +1,23 @@
-import { FiMail, FiGithub, FiCopy } from 'react-icons/fi';
+import { FiMail, FiGithub, FiCopy, FiPhone, FiLinkedin, FiCheck } from 'react-icons/fi';
 import { useState } from 'react';
 import DotField from '../../@/components/DotField';
 
 export const Contact = () => {
-  const [copied, setCopied] = useState(false);
-  const email = 'guillermosilvam13@gmail.com';
+  const [copiedField, setCopiedField] = useState<'email' | 'phone' | null>(null);
+  const email = 'guillermosilvam2005@gmail.com';
   const github = 'https://github.com/guillermosilvam';
+  const linkedIn = 'https://www.linkedin.com/in/guillermo-silva-162392356';
+  const contact = '+58 424-3224333';
 
-  const handleCopyEmail = () => {
-    navigator.clipboard.writeText(email);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
+  const handleCopyText = async (value: string, field: 'email' | 'phone') => {
+    await navigator.clipboard.writeText(value);
+    setCopiedField(field);
+    setTimeout(() => setCopiedField(null), 2000);
   };
 
   return (
-    <section id="contact" className="bg-black relative z-10 py-20 px-6 flex justify-center snap-start overflow-hidden">
+    <section id="contact" className="bg-black relative z-10 py-20 px-6 flex justify-center snap-start overflow-hidden"
+      style={{ borderBottom: '1px solid transparent', borderImage: 'linear-gradient(to right, transparent, rgba(255,255,255,0.25), transparent) 1' }}>
       <div className="absolute inset-0 z-0">
         <DotField
           dotRadius={1.5}
@@ -39,16 +42,17 @@ export const Contact = () => {
 
         <div className="flex flex-col gap-4">
           <div className="flex items-center gap-3 bg-white/10 backdrop-blur-sm border border-white/10 rounded-full px-5 py-3">
-            <FiMail className="text-emerald-300 w-5 h-5" />
+            <FiMail className="text-red-300 w-5 h-5" />
             <a href={`mailto:${email}`} className="text-white/80 font-mono text-sm flex-1 text-left hover:text-white transition">
               {email}
             </a>
             <button
-              onClick={handleCopyEmail}
-              className="text-white/60 hover:text-white transition p-1 rounded-full"
+              type="button"
+              onClick={() => handleCopyText(email, 'email')}
+              className="inline-flex items-center justify-center w-6 h-6 text-white/60 hover:text-white transition rounded-full"
               title="Copiar correo"
             >
-              {copied ? <span className="text-xs text-emerald-300">¡Copiado!</span> : <FiCopy className="w-4 h-4" />}
+              {copiedField === 'email' ? <FiCheck className="w-4 h-4 text-emerald-300" /> : <FiCopy className="w-4 h-4" />}
             </button>
           </div>
           <a
@@ -60,11 +64,31 @@ export const Contact = () => {
             <FiGithub className="text-white w-5 h-5" />
             <span className="text-white/80 font-mono text-sm">github.com/guillermosilvam</span>
           </a>
+          <a
+            href={linkedIn}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-3 bg-white/10 backdrop-blur-sm border border-white/10 rounded-full px-5 py-3 hover:bg-white/20 transition"
+          >
+            <FiLinkedin className="text-blue-500 w-5 h-5" />
+            <span className="text-white/80 font-mono text-sm">Perfil de LinkedIn</span>
+          </a>
+          <div className="flex items-center gap-3 bg-white/10 backdrop-blur-sm border border-white/10 rounded-full px-5 py-3">
+            <FiPhone className="text-emerald-300 w-5 h-5" />
+            <span className="text-white/80 font-mono text-sm flex-1 text-left hover:text-white transition">
+              {contact}
+            </span>
+            <button
+              type="button"
+              onClick={() => handleCopyText(contact, 'phone')}
+              className="inline-flex items-center justify-center w-6 h-6 text-white/60 hover:text-white transition rounded-full"
+              title="Copiar Numero de Telefono"
+            >
+              {copiedField === 'phone' ? <FiCheck className="w-4 h-4 text-emerald-300" /> : <FiCopy className="w-4 h-4" />}
+            </button>
+          </div>
         </div>
 
-        <p className="text-white/30 text-xs mt-8 font-body">
-          También puedes encontrarme en el menú de navegación.
-        </p>
       </div>
     </section>
   );

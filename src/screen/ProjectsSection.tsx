@@ -66,6 +66,7 @@ useEffect(() => {
       ref={sectionRef}
       id="projects"
       className="w-full min-h-screen relative z-10 py-20 px-6 md:px-12 bg-black overflow-hidden snap-start"
+      style={{ borderBottom: '1px solid transparent', borderImage: 'linear-gradient(to right, transparent, rgba(255,255,255,0.25), transparent) 1' }}
     >
       <div ref={backgroundRef} className="absolute inset-0 z-0">
         <DotField
