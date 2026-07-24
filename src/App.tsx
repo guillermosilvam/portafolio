@@ -9,14 +9,14 @@ import { Technologies } from './screen/Technologies'
 
 const PROJECTS_DATA = [
   {
-    images: ['/img1.jpg', '/img2.jpg'],
+    images: ['src/assets/sigefa/inicio.webp', 'src/assets/sigefa/registro.webp', 'src/assets/sigefa/creditos.webp', 'src/assets/sigefa/detalles.webp', 'src/assets/sigefa/estadisticas.webp', 'src/assets/sigefa/usuarios.webp'],
     title: 'Sistema de Informacion Crediticia',
     description: 'Página completa con registro de empresas, productores y panel admin.',
     tags: ['React', 'Typescript', 'Django', 'PostgreSQL'],
     githubLink: 'https://github.com/guillermosilvam/Credit-information-system',
   },
   {
-    images: ['/img3.jpg', '/img4.jpg'],
+    images: ['src/assets/php-crud/login.webp', 'src/assets/php-crud/php-registro.webp', 'src/assets/php-crud/listado.webp', 'src/assets/php-crud/crear-tren.webp', 'src/assets/php-crud/reporte1.webp', 'src/assets/php-crud/reporte2.webp' ],
     title: 'Sistema de Reservaciones de Tren',
     description: 'App de reservaciones de trenes con autenticación por roles y sección de reportes.',
     tags: ['PHP', 'JavaScript','Tailwind', 'MySQL'],
@@ -51,7 +51,6 @@ export const router = createBrowserRouter([
     path: '/',
     element: <App />,
     children: [
-     // { path: '/', element: <Portafolio /> },
     ]
   }
 ]) 
