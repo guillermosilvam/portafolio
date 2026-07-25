@@ -1,29 +1,46 @@
-import { createBrowserRouter } from 'react-router-dom'
+import { createHashRouter } from 'react-router-dom'
 import './App.css'
 import { Navbar } from './components/Navbar'
+import { Hero } from './screen/HeroSection'
+import { AboutMe } from './screen/AboutMe'
 import { Projects } from './screen/ProjectsSection'
 import { Footer } from './screen/Footer'
 import { Contact } from './screen/ContactMe'
-import { HorizontalScroll } from './components/HorizontalScroll'
 import { Technologies } from './screen/Technologies'
+
+import sigefaInicio from './assets/inicio.webp'
+import sigefaRegistro from './assets/registro.webp'
+import sigefaCreditos from './assets/creditos.webp'
+import sigefaDetalles from './assets/detalles.webp'
+import sigefaEstadisticas from './assets/estadisticas.webp'
+import sigefaUsuarios from './assets/usuarios.webp'
+
+import phpLogin from './assets/login.webp'
+import phpRegistro from './assets/php-registro.webp'
+import phpListado from './assets/listado.webp'
+import phpCrearTren from './assets/crear-tren.webp'
+import phpReporte1 from './assets/reporte1.webp'
+import phpReporte2 from './assets/reporte2.webp'
+
+import rickMorty from './assets/interfaz.png'
 
 const PROJECTS_DATA = [
   {
-    images: ['src/assets/sigefa/inicio.webp', 'src/assets/sigefa/registro.webp', 'src/assets/sigefa/creditos.webp', 'src/assets/sigefa/detalles.webp', 'src/assets/sigefa/estadisticas.webp', 'src/assets/sigefa/usuarios.webp'],
+    images: [sigefaInicio, sigefaRegistro, sigefaCreditos, sigefaDetalles, sigefaEstadisticas, sigefaUsuarios],
     title: 'Sistema de Informacion Crediticia',
     description: 'Página completa con registro de empresas, productores y panel admin.',
     tags: ['React', 'Typescript', 'Django', 'PostgreSQL'],
     githubLink: 'https://github.com/guillermosilvam/Credit-information-system',
   },
   {
-    images: ['src/assets/php-crud/login.webp', 'src/assets/php-crud/php-registro.webp', 'src/assets/php-crud/listado.webp', 'src/assets/php-crud/crear-tren.webp', 'src/assets/php-crud/reporte1.webp', 'src/assets/php-crud/reporte2.webp' ],
+    images: [phpLogin, phpRegistro, phpListado, phpCrearTren, phpReporte1, phpReporte2],
     title: 'Sistema de Reservaciones de Tren',
     description: 'App de reservaciones de trenes con autenticación por roles y sección de reportes.',
     tags: ['PHP', 'JavaScript','Tailwind', 'MySQL'],
     githubLink: 'https://github.com/guillermosilvam/CRUD-PHP',
   },
   {
-    images: ['src/assets/project-3/interfaz.png'],
+    images: [rickMorty],
     title: 'API de Rick y Morty',
     description: 'Practica de consumo de APIs.',
     tags: ['React', 'Tailwind','API'],
@@ -35,25 +52,20 @@ function App() {
 
   return (
     <div className="overflow-x-hidden">
-      <header>
-        <Navbar />
-        <HorizontalScroll />
-      </header>
-      <main>
-        <Projects projects={PROJECTS_DATA} />
-        <Technologies />
-        <Contact />
-      </main>
-      <footer>
-        <Footer />
-      </footer>
+      <Navbar />
+      <Hero />
+      <AboutMe />
+      <Projects projects={PROJECTS_DATA} />
+      <Technologies />
+      <Contact />
+      <Footer />
     </div>
   )
 }
 
 export default App
 
-export const router = createBrowserRouter([
+export const router = createHashRouter([
   {
     path: '/',
     element: <App />,

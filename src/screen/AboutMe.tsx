@@ -1,8 +1,26 @@
 import pfp1 from '../assets/pfp1.webp'
+import DotField from '../../@/components/DotField'
 
 export const AboutMe = () => (
-    <section id="about" className="relative z-10 h-full flex items-center justify-center text-white px-6 md:px-20 py-6 md:py-0 overflow-hidden">
-      <div className="flex flex-col md:flex-row items-center gap-6 md:gap-12 w-full max-w-6xl">
+    <section id="about" className="relative z-10 min-h-screen flex items-center justify-center text-white px-6 md:px-20 py-16 md:py-0 overflow-hidden bg-black"
+      style={{ borderBottom: '1px solid transparent', borderImage: 'linear-gradient(to right, transparent, rgba(255,255,255,0.25), transparent) 1' }}>
+      <div className="absolute inset-0 z-0">
+        <DotField
+          dotRadius={1.5}
+          dotSpacing={50}
+          bulgeStrength={67}
+          glowRadius={160}
+          sparkle={true}
+          waveAmplitude={10}
+          cursorRadius={400}
+          cursorForce={0.1}
+          bulgeOnly
+          gradientFrom="#404040"
+          gradientTo="#404040"
+          glowColor="#3e3e3e"
+        />
+      </div>
+      <div className="relative z-10 flex flex-col md:flex-row items-center gap-6 md:gap-12 w-full max-w-6xl">
         <div className="flex-1 space-y-3 md:space-y-6 text-center md:text-left">
             <span className='text-[10px] md:text-sm font-title text-white/60 tracking-widest uppercase'>
             Sobre mí

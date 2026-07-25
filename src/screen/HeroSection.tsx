@@ -1,9 +1,27 @@
 import TextType from '../../@/components/TextType'
 import { CodeWindow } from '../components/CodeWindow'
+import DotField from '../../@/components/DotField'
 
 export const Hero = () => (
-    <section id='hero' className='relative w-full h-screen overflow-hidden'>
-        <div className='relative z-10 h-full w-full flex flex-col md:flex-row items-center justify-center text-white gap-2 md:gap-10 px-6 md:px-8'>
+    <section id='hero' className='relative w-full min-h-screen overflow-hidden flex flex-col justify-center bg-black'
+      style={{ borderBottom: '1px solid transparent', borderImage: 'linear-gradient(to right, transparent, rgba(255,255,255,0.25), transparent) 1' }}>
+        <div className="absolute inset-0 z-0">
+          <DotField
+            dotRadius={1.5}
+            dotSpacing={50}
+            bulgeStrength={67}
+            glowRadius={160}
+            sparkle={true}
+            waveAmplitude={10}
+            cursorRadius={400}
+            cursorForce={0.1}
+            bulgeOnly
+            gradientFrom="#404040"
+            gradientTo="#404040"
+            glowColor="#3e3e3e"
+          />
+        </div>
+        <div className='relative z-10 h-full w-full flex flex-col md:flex-row items-center justify-center text-white gap-2 md:gap-10 px-6 md:px-8 py-16 md:py-0'>
             <div className='flex flex-col items-center md:items-start justify-center w-full md:w-3/5'>
                 <h1 className='font-title text-4xl md:text-5xl lg:text-7xl font-normal tracking-wider text-center md:text-left'>Guillermo Silva</h1>
                 <div className='h-14 md:h-12 mt-2.5 w-full'>
