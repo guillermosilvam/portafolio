@@ -35,7 +35,7 @@ export const Contact = () => {
         />
       </div>
       <div className="relative z-10 bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl md:rounded-3xl p-6 md:p-12 text-center max-w-lg w-full shadow-[0_0_30px_rgba(255,255,255,0.05)]">
-        <h2 className="text-2xl md:text-4xl font-title text-white mb-3 md:mb-4">Hablemos</h2>
+        <h2 className="text-2xl md:text-4xl font-title text-white mb-3 md:mb-4">¡Hablemos!</h2>
         <p className="text-white/60 font-body mb-6 md:mb-8 max-w-md mx-auto text-sm md:text-base px-2">
           Si tienes un proyecto en mente, una oportunidad o solo quieres charlar sobre tecnología, estaré encantado de escucharte.
         </p>
