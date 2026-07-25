@@ -34,26 +34,26 @@ useEffect(() => {
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: section,
-      start: 'top 75%',
+      start: 'top 85%',
       toggleActions: 'play reverse play reverse',
     },
   });
 
   tl.fromTo(bg,
-    { opacity: 0, scale: 1.25 },
-    { opacity: 1, scale: 1, duration: 1.5, ease: 'power4.out' }
+    { opacity: 0, scale: 1.15 },
+    { opacity: 1, scale: 1, duration: 0.8, ease: 'power4.out' }
   );
 
   tl.fromTo(title,
-    { y: -100, opacity: 0, filter: 'blur(15px)' },
-    { y: 0, opacity: 1, filter: 'blur(0px)', duration: 1.2, ease: 'back.out(1.8)' },
-    '-=0.8'
+    { y: -60, opacity: 0, filter: 'blur(10px)' },
+    { y: 0, opacity: 1, filter: 'blur(0px)', duration: 0.6, ease: 'back.out(1.8)' },
+    '-=0.5'
   );
 
   tl.fromTo(grid.children,
-    { y: 150, opacity: 0, rotateX: 30, scale: 0.7 },
-    { y: 0, opacity: 1, rotateX: 0, scale: 1, duration: 1, stagger: { each: 0.2, ease: 'back.out(1.7)' } },
-    '-=0.6'
+    { y: 100, opacity: 0, rotateX: 20, scale: 0.8 },
+    { y: 0, opacity: 1, rotateX: 0, scale: 1, duration: 0.6, stagger: { each: 0.12, ease: 'back.out(1.7)' } },
+    '-=0.4'
   );
 
   return () => {

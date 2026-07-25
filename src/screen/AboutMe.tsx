@@ -1,8 +1,48 @@
+import { useRef, useEffect } from 'react'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import pfp1 from '../assets/pfp1.webp'
 import DotField from '../../@/components/DotField'
 
-export const AboutMe = () => (
-    <section id="about" className="relative z-10 min-h-screen flex items-center justify-center text-white px-6 md:px-20 py-16 md:py-0 overflow-hidden bg-black"
+gsap.registerPlugin(ScrollTrigger)
+
+export const AboutMe = () => {
+  const sectionRef = useRef<HTMLElement>(null)
+  const textRef = useRef<HTMLDivElement>(null)
+  const photoRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const section = sectionRef.current
+    const text = textRef.current
+    const photo = photoRef.current
+    if (!section || !text || !photo) return
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: section,
+        start: 'top 80%',
+        toggleActions: 'play reverse play reverse',
+      },
+    })
+
+    tl.fromTo(text,
+      { x: -80, opacity: 0 },
+      { x: 0, opacity: 1, duration: 0.7, ease: 'power3.out' }
+    )
+
+    tl.fromTo(photo,
+      { x: 80, opacity: 0, scale: 0.8 },
+      { x: 0, opacity: 1, scale: 1, duration: 0.7, ease: 'power3.out' },
+      '-=0.5'
+    )
+
+    return () => {
+      ScrollTrigger.getAll().forEach(t => t.kill())
+    }
+  }, [])
+
+  return (
+    <section ref={sectionRef} id="about" className="relative z-10 min-h-screen flex items-center justify-center text-white px-6 md:px-20 py-16 md:py-0 overflow-hidden bg-black"
       style={{ borderBottom: '1px solid transparent', borderImage: 'linear-gradient(to right, transparent, rgba(255,255,255,0.25), transparent) 1' }}>
       <div className="absolute inset-0 z-0">
         <DotField
@@ -21,7 +61,7 @@ export const AboutMe = () => (
         />
       </div>
       <div className="relative z-10 flex flex-col md:flex-row items-center gap-6 md:gap-12 w-full max-w-6xl">
-        <div className="flex-1 space-y-3 md:space-y-6 text-center md:text-left">
+        <div ref={textRef} className="flex-1 space-y-3 md:space-y-6 text-center md:text-left">
             <span className='text-[10px] md:text-sm font-title text-white/60 tracking-widest uppercase'>
             Sobre mí
           </span>
@@ -39,7 +79,7 @@ export const AboutMe = () => (
           </p>
         </div>
 
-        <div className="shrink-0 relative">
+        <div ref={photoRef} className="shrink-0 relative">
           <div className="
             w-32 h-32 sm:w-40 sm:h-40 md:w-80 md:h-80 rounded-full 
             bg-white/5 backdrop-blur-xl border border-white/20 
@@ -58,4 +98,5 @@ export const AboutMe = () => (
         </div>
       </div>
     </section>
-)
+  )
+}
