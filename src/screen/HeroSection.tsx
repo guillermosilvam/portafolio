@@ -33,7 +33,7 @@ export const Hero = () => (
                     pauseDuration={2000}
                   />
                 </div>
-                <div className='flex flex-row justify-center md:justify-start gap-2 xs:gap-3 mt-6 w-full'>
+                <div className='flex flex-row justify-center md:justify-start gap-2 xs:gap-3 mt-5 w-full'>
                     <button 
                       onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
                       className="
@@ -64,7 +64,7 @@ export const Hero = () => (
                     </button>
                 </div>
             </div>
-            <div className="hidden md:flex w-full md:w-2/5 items-center justify-center mt-0">
+            <div className="flex w-full md:w-2/5 items-center justify-center mt-8 px-3 md:px-0 md:mt-0">
                 <CodeWindow />
             </div>
         </div>
