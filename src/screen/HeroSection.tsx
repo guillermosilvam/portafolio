@@ -15,7 +15,9 @@ export const Hero = () => (
                     />
                 </div>
                 <div className='flex flex-col md:flex-row gap-2 md:gap-4 mt-6 md:mt-10 text-sm md:text-xl w-full md:w-auto'>
-                    <button className="
+                    <button 
+                      onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
+                      className="
                       bg-white 
                       text-black font-medium
                       rounded-full px-5 md:px-8 py-2.5 md:py-3

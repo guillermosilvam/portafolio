@@ -22,6 +22,13 @@ const PROJECTS_DATA = [
     tags: ['PHP', 'JavaScript','Tailwind', 'MySQL'],
     githubLink: 'https://github.com/guillermosilvam/CRUD-PHP',
   },
+  {
+    images: ['src/assets/project-3/interfaz.png'],
+    title: 'API de Rick y Morty',
+    description: 'Practica de consumo de APIs.',
+    tags: ['React', 'Tailwind','API'],
+    githubLink: 'https://github.com/guillermosilvam/RickAndMorty',
+  }
 ];
 
 function App() {
