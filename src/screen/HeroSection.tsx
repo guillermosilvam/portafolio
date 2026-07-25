@@ -39,7 +39,7 @@ export const Hero = () => (
                       className="
                         bg-white text-black font-medium
                         rounded-full
-                        text-xs px-4 py-2          /* base: muy compacto, mobile S */
+                        text-md px-4 py-2          /* base: muy compacto, mobile S */
                         sm:text-lg sm:px-10 sm:py-3 /* sm+: grande como antes */
                         whitespace-nowrap
                         hover:bg-gray-200 hover:shadow-inner
@@ -52,7 +52,7 @@ export const Hero = () => (
                         bg-white/10 backdrop-blur-md border border-white/20
                         text-white font-medium
                         rounded-full
-                        text-xs px-4 py-2
+                        text-md px-4 py-2
                         sm:text-lg sm:px-10 sm:py-3
                         whitespace-nowrap
                         hover:bg-white/20 hover:border-white/30
