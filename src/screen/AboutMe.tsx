@@ -66,7 +66,7 @@ export const AboutMe = () => {
             Sobre mí
           </span>
           <h2 className='text-xl md:text-4xl lg:text-5xl font-title font-light leading-tight'>
-            Ingeniero de sistemas. Curioso por naturaleza.
+            Ingeniero de sistemas.
           </h2>
           <p className='text-xs md:text-lg font-subtitle text-white/80 leading-relaxed max-w-xl mx-auto md:mx-0'>
             Soy Guillermo Silva, ingeniero de sistemas recién graduado. Me apasiona el desarrollo de software, 
