@@ -22,9 +22,24 @@ import phpCrearTren from './assets/crear-tren.webp'
 import phpReporte1 from './assets/reporte1.webp'
 import phpReporte2 from './assets/reporte2.webp'
 
+import valtaHome from './assets/valta-home.webp'
+import valtaLogin from './assets/valta-login.webp'
+import valtaRegistro from './assets/valta-register.webp'
+import valtaDashboard from './assets/valta-dashboard.webp'
+import valtaProfessionals from './assets/valta-professionals.webp'
+import valtaTickets from './assets/valta-tickets.webp'
+import valtaProfile from './assets/valta-profile.webp'
+
 import rickMorty from './assets/interfaz.png'
 
 const PROJECTS_DATA = [
+  {
+    images: [valtaHome, valtaLogin, valtaRegistro, valtaDashboard, valtaProfessionals, valtaTickets, valtaProfile],
+    title: 'Plataforma de Freelancers Valta',
+    description: 'Web demo para la gestión de proyectos y tickets de trabajo para freelancers y clientes.',
+    tags: ['React', 'Typescript','Django', 'SQLite'],
+    githubLink: 'https://github.com/guillermosilvam/Valta-WorkPlatform',
+  },
   {
     images: [sigefaInicio, sigefaRegistro, sigefaCreditos, sigefaDetalles, sigefaEstadisticas, sigefaUsuarios],
     title: 'Sistema de Informacion Crediticia',

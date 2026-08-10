@@ -58,7 +58,7 @@ export const Hero = () => (
                         hover:bg-white/20 hover:border-white/30
                         transition-all duration-300
                       ">
-                      <a href="https://drive.google.com/file/d/1nnrSSEldkBZXi1uaoH4zgUkyGOweRsGJ/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+                      <a href="https://drive.google.com/file/d/1fmWtZQcsuM90Y1EmWEGh6gOfOl965hCp/view?usp=sharing" target="_blank" rel="noopener noreferrer">
                         Visualizar CV
                       </a>
                     </button>
