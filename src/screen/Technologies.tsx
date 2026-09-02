@@ -14,7 +14,10 @@ import {
   SiRender,
   SiPhp,
   SiMysql,
+  SiExpress,
+  SiSupabase,
 } from "react-icons/si";
+import { FaNodeJs } from "react-icons/fa";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -23,13 +26,16 @@ const technologies = [
   { icon: SiTypescript, name: "TypeScript", color: "text-blue-400" },
   { icon: SiTailwindcss, name: "Tailwind", color: "text-sky-400" },
   { icon: SiPython, name: "Python", color: "text-yellow-400" },
-  { icon: SiDjango, name: "Django", color: "text-emerald-500" },
+  { icon: SiDjango, name: "Django", color: "text-emerald-700" },
+  { icon: FaNodeJs, name: "NodeJS", color: "text-emerald-500" },
+  { icon: SiExpress, name: "Express", color: "text-white" },
   { icon: SiPhp, name: "PHP", color: "text-purple-400" },
   { icon: SiMysql, name: "MySQL", color: "text-orange-400" },
   { icon: SiPostgresql, name: "PostgreSQL", color: "text-blue-300" },
   { icon: SiGit, name: "Git", color: "text-orange-400" },
   { icon: SiVercel, name: "Vercel", color: "text-white" },
   { icon: SiRender, name: "Render", color: "text-indigo-400" },
+  { icon: SiSupabase, name: "Supabase", color: "text-emerald-400" },
 ];
 
 const topRow = technologies.slice(0, 5);
