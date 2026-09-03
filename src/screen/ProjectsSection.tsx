@@ -94,10 +94,10 @@ useEffect(() => {
 
       <div
         ref={gridRef}
-        className="relative z-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto"
+        className="relative z-10 flex flex-wrap justify-center gap-8 max-w-7xl mx-auto px-1.5"
       >
         {projects.map((project, index) => (
-          <ProjectCard key={index} {...project} />
+          <ProjectCard className='flex-1 sm:min-w-100 sm:max-w-100 min-w-82 max-w-82' key={index} {...project} />
         ))}
       </div>
     </section>

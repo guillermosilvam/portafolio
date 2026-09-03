@@ -8,6 +8,7 @@ interface ProjectCardProps {
   description: string;
   tags: string[];
   githubLink: string;
+  className?: string;
 }
 
 export const ProjectCard: React.FC<ProjectCardProps> = ({
@@ -16,8 +17,9 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   description,
   tags,
   githubLink,
+  className
 }) => (
-    <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl overflow-hidden flex flex-col hover:border-white/20 transition-colors">
+    <div className={`bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl overflow-hidden flex flex-col hover:border-white/20 transition-colors ${className}`}>
       <ImageCarousel images={images} className="w-full h-48 md:h-56" />
 
       <div className="p-5 flex flex-col gap-3 flex-1">
