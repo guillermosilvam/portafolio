@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
+import Lightbox from 'yet-another-react-lightbox';
+import 'yet-another-react-lightbox/styles.css';
 
 interface ImageCarouselProps {
   images: string[];
@@ -8,6 +10,7 @@ interface ImageCarouselProps {
 
 export const ImageCarousel: React.FC<ImageCarouselProps> = ({ images, className }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [lightboxOpen, setLightboxOpen] = useState(false);
 
   const goToPrevious = () => {
     setCurrentIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
@@ -21,21 +24,29 @@ export const ImageCarousel: React.FC<ImageCarouselProps> = ({ images, className 
 
   return (
     <div className={`relative overflow-hidden rounded-xl ${className}`}>
-      {/* Imagen con transición de opacidad */}
       <div className="w-full h-48 md:h-56 relative">
         {images.map((src, index) => (
-          <img
+          <button
             key={index}
-            src={src}
-            alt={`Slide ${index + 1}`}
-            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${
-              index === currentIndex ? 'opacity-100' : 'opacity-0'
+            type="button"
+            onClick={() => setLightboxOpen(true)}
+            disabled={index !== currentIndex}
+            aria-label={`Ampliar imagen ${index + 1}`}
+            className={`absolute inset-0 w-full h-full transition-opacity duration-700 ${
+              index === currentIndex
+                ? 'opacity-100 cursor-zoom-in'
+                : 'opacity-0 pointer-events-none'
             }`}
-          />
+          >
+            <img
+              src={src}
+              alt={`Slide ${index + 1}`}
+              className="w-full h-full object-cover"
+            />
+          </button>
         ))}
       </div>
 
-      {/* Flechas de navegación */}
       {images.length > 1 && (
         <>
           <button
@@ -55,7 +66,6 @@ export const ImageCarousel: React.FC<ImageCarouselProps> = ({ images, className 
         </>
       )}
 
-      {/* Indicadores (puntos) */}
       {images.length > 1 && (
         <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2">
           {images.map((_, index) => (
@@ -72,6 +82,14 @@ export const ImageCarousel: React.FC<ImageCarouselProps> = ({ images, className 
           ))}
         </div>
       )}
+
+      <Lightbox
+        open={lightboxOpen}
+        close={() => setLightboxOpen(false)}
+        index={currentIndex}
+        slides={images.map((src) => ({ src }))}
+        on={{ view: ({ index }) => setCurrentIndex(index) }}
+      />
     </div>
   );
 };

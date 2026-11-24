@@ -58,7 +58,7 @@ export const Hero = () => (
                         hover:bg-white/20 hover:border-white/30
                         transition-all duration-300
                       ">
-                      <a className='flex justify-center items-center gap-2' href="https://drive.google.com/file/d/1ZTugvYaXz6oOXHaK2hY9rd4qQCXGpdwe/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+                      <a className='flex justify-center items-center gap-2' href="https://drive.google.com/file/d/1EHo6vdF0hle5E1wx7HMZyMOc2pvrS8NU/view?usp=drive_link" target="_blank" rel="noopener noreferrer">
                         <FaExternalLinkAlt />
                         Visualizar CV
                       </a>

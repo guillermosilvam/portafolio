@@ -16,6 +16,8 @@ import {
   SiMysql,
   SiExpress,
   SiSupabase,
+  SiFastapi,
+  SiDocker
 } from "react-icons/si";
 import { FaNodeJs } from "react-icons/fa";
 
@@ -27,12 +29,14 @@ const technologies = [
   { icon: SiTailwindcss, name: "Tailwind", color: "text-sky-400" },
   { icon: SiPython, name: "Python", color: "text-yellow-400" },
   { icon: SiDjango, name: "Django", color: "text-emerald-700" },
+  { icon: SiFastapi, name: "FastAPI", color: "text-[#009688]" },
   { icon: FaNodeJs, name: "NodeJS", color: "text-emerald-500" },
   { icon: SiExpress, name: "Express", color: "text-white" },
   { icon: SiPhp, name: "PHP", color: "text-purple-400" },
   { icon: SiMysql, name: "MySQL", color: "text-orange-400" },
   { icon: SiPostgresql, name: "PostgreSQL", color: "text-blue-300" },
   { icon: SiGit, name: "Git", color: "text-orange-400" },
+  { icon: SiDocker, name: "Docker", color: "text-[#2496ED]" },
   { icon: SiVercel, name: "Vercel", color: "text-white" },
   { icon: SiRender, name: "Render", color: "text-indigo-400" },
   { icon: SiSupabase, name: "Supabase", color: "text-emerald-400" },

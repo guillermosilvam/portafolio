@@ -30,37 +30,41 @@ import valtaProfessionals from './assets/valta-professionals.webp'
 import valtaTickets from './assets/valta-tickets.webp'
 import valtaProfile from './assets/valta-profile.webp'
 
-import rickMorty from './assets/interfaz.png'
+import scrapping1 from './assets/scrapping-1.webp'
+import scrapping2 from './assets/scrapping-2.webp'
+import diagrama from './assets/diagrama.webp'
+
 
 const PROJECTS_DATA = [
   {
-    images: [valtaHome, valtaLogin, valtaRegistro, valtaDashboard, valtaProfessionals, valtaTickets, valtaProfile],
-    title: 'Plataforma de Freelancers Valta',
-    description: 'Web demo para la gestión de proyectos y tickets de trabajo para freelancers y clientes.',
-    tags: ['React', 'Typescript','Django', 'SQLite'],
-    githubLink: 'https://github.com/guillermosilvam/Valta-WorkPlatform',
+    images: [scrapping1, scrapping2, diagrama],
+    title: 'Scraper de Datos de Vehículos',
+    description: 'Scraper en Python que recorre páginas de anuncios de vehículos, extrae y normaliza los datos a JSON y los guarda en PostgreSQL para consultarlos.',
+    tags: ["Python", "BeautifulSoup", "Web Scraping", "PostgreSQL", "JSON"],
+    githubLink: 'https://github.com/guillermosilvam/scraping-test-1',
   },
   {
     images: [sigefaInicio, sigefaRegistro, sigefaCreditos, sigefaDetalles, sigefaEstadisticas, sigefaUsuarios],
     title: 'Sistema de Informacion Crediticia',
-    description: 'Página completa con registro de empresas, productores y panel admin.',
+    description: 'Sistema para registrar empresas y productores, gestionar créditos y consultar estadísticas desde un panel administrativo.',
     tags: ['React', 'Typescript', 'Django', 'PostgreSQL'],
     githubLink: 'https://github.com/guillermosilvam/Credit-information-system',
   },
   {
+    images: [valtaHome, valtaLogin, valtaRegistro, valtaDashboard, valtaProfessionals, valtaTickets, valtaProfile],
+    title: 'Plataforma de Freelancers Valta',
+    description: 'Plataforma para que freelancers y clientes organicen proyectos y den seguimiento a solicitudes mediante tickets, con perfiles profesionales y un panel de gestión. (Demo)',
+    tags: ['React', 'Typescript','Django', 'SQLite'],
+    githubLink: 'https://github.com/guillermosilvam/Valta-WorkPlatform',
+  },
+  {
     images: [phpLogin, phpRegistro, phpListado, phpCrearTren, phpReporte1, phpReporte2],
     title: 'Sistema de Reservaciones de Tren',
-    description: 'App de reservaciones de trenes con autenticación por roles y sección de reportes.',
+    description: 'Aplicación de reservaciones ferroviarias con autenticación por roles, gestión de trenes y una sección de reportes.',
     tags: ['PHP', 'JavaScript','Tailwind', 'MySQL'],
     githubLink: 'https://github.com/guillermosilvam/CRUD-PHP',
   },
-  {
-    images: [rickMorty],
-    title: 'API de Rick y Morty',
-    description: 'Practica de consumo de APIs.',
-    tags: ['React', 'Tailwind','API'],
-    githubLink: 'https://github.com/guillermosilvam/RickAndMorty',
-  }
+
 ];
 
 function App() {
