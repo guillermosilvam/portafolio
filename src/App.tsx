@@ -34,8 +34,22 @@ import scrapping1 from './assets/scrapping-1.webp'
 import scrapping2 from './assets/scrapping-2.webp'
 import diagrama from './assets/diagrama.webp'
 
+import orbitVideo from './assets/orbit-video.mp4'
+import orbit1 from './assets/orbit-1.webp'
+import orbit2 from './assets/orbit-2.webp'
+import orbit3 from './assets/orbit-3.webp'
+import orbit4 from './assets/orbit-4.webp'
+import orbit5 from './assets/orbit-5.webp'
+
 
 const PROJECTS_DATA = [
+  {
+    images: [orbitVideo, orbit1, orbit2, orbit3, orbit4, orbit5],
+    title: 'Plataforma colaborativa de gestión de proyectos',
+    description: 'App para gestionar proyectos y tareas en tableros Kanban dentro de workspaces compartidos, con invitación de colaboradores.',
+    tags: ['React', 'Express', 'TypeScript','PostgreSQL', 'Docker', 'Bun'],
+    githubLink: 'https://github.com/guillermosilvam/Orbit',
+  },
   {
     images: [scrapping1, scrapping2, diagrama],
     title: 'Scraper de Datos de Vehículos',
@@ -47,7 +61,7 @@ const PROJECTS_DATA = [
     images: [sigefaInicio, sigefaRegistro, sigefaCreditos, sigefaDetalles, sigefaEstadisticas, sigefaUsuarios],
     title: 'Sistema de Informacion Crediticia',
     description: 'Sistema para registrar empresas y productores, gestionar créditos y consultar estadísticas desde un panel administrativo.',
-    tags: ['React', 'Typescript', 'Django', 'PostgreSQL'],
+    tags: ['React', 'Typescript', 'Django', 'Python','PostgreSQL'],
     githubLink: 'https://github.com/guillermosilvam/Credit-information-system',
   },
   {
