@@ -42,24 +42,18 @@ const technologies = [
   { icon: SiSupabase, name: "Supabase", color: "text-emerald-400" },
 ];
 
-const topRow = technologies.slice(0, 5);
-const bottomRow = technologies.slice(5);
-
 export const Technologies = () => {
   const sectionRef = useRef(null);
   const titleRef = useRef(null);
-  const topRowRef = useRef<HTMLDivElement>(null);
-  const bottomRowRef = useRef<HTMLDivElement>(null);
+  const technologiesRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const section = sectionRef.current;
     const title = titleRef.current;
-    const topRow = topRowRef.current;
-    const bottomRow = bottomRowRef.current;
-    if (!section || !title || !topRow || !bottomRow) return;
-
-    const topItems = topRow.querySelectorAll(".tech-item");
-    const bottomItems = bottomRow.querySelectorAll(".tech-item");
+    const technologyItems = technologiesRef.current?.querySelectorAll(".tech-item");
+    if (!section || !title || !technologyItems) return;
+    const firstGroup = Array.from(technologyItems).slice(0, 5);
+    const remainingGroup = Array.from(technologyItems).slice(5);
 
     const tl = gsap.timeline({
       scrollTrigger: {
@@ -76,13 +70,13 @@ export const Technologies = () => {
     );
 
     tl.fromTo(
-      topItems,
+      firstGroup,
       { x: -200, opacity: 0 },
       {
         x: 0,
         opacity: 1,
         duration: 0.5,
-        stagger: 0.1,
+        stagger: 0.08,
         ease: "power2.out",
         clearProps: "transform",
       },
@@ -90,7 +84,7 @@ export const Technologies = () => {
     );
 
     tl.fromTo(
-      bottomItems,
+      remainingGroup,
       { x: 200, opacity: 0 },
       {
         x: 0,
@@ -140,29 +134,19 @@ export const Technologies = () => {
       <p className="relative z-10 text-center text-white/50 font-body max-w-xl mx-auto mb-6 md:mb-10 text-sm md:text-base px-2">
         Herramientas y lenguajes con los que he construido proyectos reales.
       </p>
-      <div className="relative z-10 flex flex-col gap-4 md:gap-6 max-w-3xl mx-auto">
-        <div ref={topRowRef} className="flex flex-wrap justify-center gap-3 md:gap-6">
-          {topRow.map(({ icon: Icon, name, color }) => (
-            <div
-              key={name}
-              className="tech-item flex flex-col items-center gap-1.5 md:gap-2 bg-white/5 backdrop-blur-md border border-white/10 rounded-lg md:rounded-xl p-2.5 md:p-4 w-16 md:w-24 hover:bg-white/10 hover:border-white/20 transition-all duration-300 hover:scale-105"
-            >
-              <Icon className={`w-6 h-6 md:w-8 md:h-8 ${color}`} />
-              <span className="text-[10px] md:text-xs text-white/60 font-mono">{name}</span>
-            </div>
-          ))}
-        </div>
-        <div ref={bottomRowRef} className="flex flex-wrap justify-center gap-3 md:gap-6">
-          {bottomRow.map(({ icon: Icon, name, color }) => (
-            <div
-              key={name}
-              className="tech-item flex flex-col items-center gap-1.5 md:gap-2 bg-white/5 backdrop-blur-md border border-white/10 rounded-lg md:rounded-xl p-2.5 md:p-4 w-16 md:w-24 hover:bg-white/10 hover:border-white/20 transition-all duration-300 hover:scale-105"
-            >
-              <Icon className={`w-6 h-6 md:w-8 md:h-8 ${color}`} />
-              <span className="text-[10px] md:text-xs text-white/60 font-mono">{name}</span>
-            </div>
-          ))}
-        </div>
+      <div
+        ref={technologiesRef}
+        className="relative z-10 grid grid-cols-4 justify-items-center gap-3 md:flex md:flex-wrap md:justify-center md:gap-6 max-w-3xl mx-auto"
+      >
+        {technologies.map(({ icon: Icon, name, color }) => (
+          <div
+            key={name}
+            className="tech-item flex flex-col items-center gap-1.5 md:gap-2 bg-white/5 backdrop-blur-md border border-white/10 rounded-lg md:rounded-xl p-2.5 md:p-4 w-16 md:w-24 hover:bg-white/10 hover:border-white/20 transition-all duration-300 hover:scale-105"
+          >
+            <Icon className={`w-6 h-6 md:w-8 md:h-8 ${color}`} />
+            <span className="text-[10px] md:text-xs text-white/60 font-mono">{name}</span>
+          </div>
+        ))}
       </div>
     </section>
   );

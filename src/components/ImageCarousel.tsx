@@ -2,7 +2,7 @@ import React, { lazy, Suspense, useState } from 'react';
 import { FiChevronLeft, FiChevronRight, FiPlay, FiX } from 'react-icons/fi';
 import 'yet-another-react-lightbox/styles.css';
 
-const Lightbox = lazy(() => import('yet-another-react-lightbox'));
+const Lightbox = lazy(() => import('./ZoomableLightbox'));
 
 const isVideo = (src: string) => /\.(mp4|webm|ogg)(?:$|[?#])/i.test(src);
 
